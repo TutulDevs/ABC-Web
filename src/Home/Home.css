@@ -1,0 +1,32 @@
+.Home {
+  text-align: center;
+
+  display: grid;
+  gap: 3rem;
+  align-content: center;
+  justify-items: center;
+}
+
+.Home h1 {
+  font-size: 7.5vmin;
+}
+
+.Home p {
+  max-width: 60rem;
+}
+
+.Home a {
+  padding: 1rem 2rem;
+  border: 2px solid transparent;
+  border-radius: var(--rad-max);
+  background: var(--green);
+  color: var(--white);
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+
+.Home a:hover {
+  border: 2px solid var(--green);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--green);
+}

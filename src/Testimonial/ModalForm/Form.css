@@ -1,0 +1,54 @@
+.Backdrop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.info {
+  max-width: 50rem;
+  font-size: 1.4rem;
+  color: var(--green);
+  text-align: center;
+}
+
+.Modal {
+  width: 95%;
+  max-width: 40rem;
+  min-height: 5rem;
+  margin-top: 3rem;
+  padding: 2rem 2rem;
+  border: 1px solid var(--gray);
+  border-radius: var(--rad-min);
+
+  box-shadow: 20px 20px 60px #d5d5d5, -20px -20px 60px #ffffff;
+}
+
+.Form {
+  display: grid;
+  gap: 1rem;
+}
+
+.Form > * {
+  padding: 1rem;
+  font-family: inherit;
+
+  outline-color: var(--green);
+  outline-width: 1px;
+  border: 1px solid var(--gray);
+  border-radius: var(--rad-min);
+}
+
+.submit {
+  border-color: var(--green);
+  background: transparent;
+  font-size: 1.75rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.submit:hover,
+.submit:focus {
+  background: var(--green);
+  color: var(--white);
+}

@@ -1,0 +1,24 @@
+.Testimonial .box-of-btn {
+  margin: 2rem 0;
+  display: grid;
+  place-items: center;
+}
+
+.Testimonial .btn {
+  padding: 1.25rem 2.5rem;
+  width: 25rem;
+  text-align: center;
+  background: var(--green);
+  color: var(--white);
+  font-size: 1.75rem;
+  border-radius: var(--rad-max);
+}
+
+.Testimonial .articles {
+  min-height: 50vh;
+
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  align-content: center;
+}

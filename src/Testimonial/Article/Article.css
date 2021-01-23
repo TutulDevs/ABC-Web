@@ -1,0 +1,19 @@
+.Article {
+  padding: 1rem;
+  min-height: 10rem;
+  position: relative;
+  border: 1px solid var(--green);
+  border-radius: var(--rad-min);
+}
+
+.Article .time {
+  background: var(--white);
+  color: var(--green);
+  border: 1px solid var(--green);
+  font-size: 1.25rem;
+  padding: 0.25rem 0.75rem;
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,26 @@
+.Header {
+  width: 100%;
+  height: 5rem;
+
+  box-shadow: 0 0.3rem 1.5rem -0.25rem var(--gray);
+}
+
+.Header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header .Logo {
+  filter: drop-shadow(0 0 0.25rem var(--green));
+}
+
+.Header a {
+  color: var(--black);
+  font-weight: 500;
+  margin-left: 1rem;
+}
+.Header a:hover,
+.Header a.active {
+  color: var(--green) !important;
+}
