@@ -1,8 +1,8 @@
 # ABC Web Solutions
 
-It's a demo project for practicing Route, Firebase, Form Validaton etc.
+It's a demo project for practicing Route and Firebase. Go to the testimonial section and say something to me 😂
 
-[Live link]()
+[Live link](https://r-abc.netlify.app/)
 
 ## Available Scripts
 
