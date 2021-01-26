@@ -1,9 +1,14 @@
 .Article {
-  padding: 1rem;
+  padding: 1.5rem;
   min-height: 10rem;
   position: relative;
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--green);
   border-radius: var(--rad-min);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .Article .time {
@@ -14,6 +19,24 @@
   padding: 0.25rem 0.75rem;
   position: absolute;
   top: 0;
-  right: 2rem;
+  right: 1.5rem;
   transform: translateY(-50%);
+}
+
+.Article .message {
+  line-height: 1.7;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.Article .name {
+  align-self: flex-end;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 420px) {
+  .Article {
+    text-align: justify;
+  }
 }

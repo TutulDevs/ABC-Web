@@ -3,10 +3,6 @@ import "./Header.css";
 import { NavLink } from "react-router-dom";
 
 const header = () => {
-  const color = {
-    color: "red",
-  };
-
   return (
     <header className='Header'>
       <div className='container'>

@@ -10,24 +10,24 @@ const services = () => {
 
       <div className='boxes'>
         <div className='box'>
-          <h2>Service One</h2>
+          <h2>Mind boggling performance</h2>
           <p>
-            lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-            lorem
+            Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing
+            gravida odio porttitor sem non mi integer non faucibus.
           </p>
         </div>
         <div className='box'>
-          <h2>Service One</h2>
+          <h2>Exotic UI</h2>
           <p>
-            lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-            lorem
+            Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing
+            gravida odio porttitor sem non mi integer non faucibus.
           </p>
         </div>
         <div className='box'>
-          <h2>Service One</h2>
+          <h2>Darn good support</h2>
           <p>
-            lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-            lorem
+            Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing
+            gravida odio porttitor sem non mi integer non faucibus.
           </p>
         </div>
       </div>

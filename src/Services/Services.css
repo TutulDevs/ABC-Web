@@ -4,12 +4,13 @@
 
   display: grid;
   gap: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
 }
 
 .Services .box {
-  min-height: 20rem;
+  background: rgba(255, 255, 255, 0.9);
+  min-height: 17.5rem;
   padding: 1rem 1.5rem;
   border-radius: var(--rad-min);
   box-shadow: inset 2px 2px 2px 1px var(--gray),
@@ -18,8 +19,15 @@
 
 .Services .box h2 {
   margin-bottom: 1.25rem;
+  text-transform: capitalize;
 }
 
 .Services .box p {
   color: #7d7d7d;
+}
+
+@media (max-width: 600px) {
+  .Services .boxes {
+    grid-template-columns: 1fr;
+  }
 }

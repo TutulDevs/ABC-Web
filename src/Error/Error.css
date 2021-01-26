@@ -11,3 +11,13 @@
   transform: skew(-15deg);
   text-shadow: 3px 3px 5px var(--gray), 9px 9px 0px var(--green);
 }
+
+.Error .zero {
+  animation: animate 1.75s ease-out 0.25s alternate infinite;
+}
+
+@keyframes animate {
+  100% {
+    text-shadow: -3px -3px 5px var(--gray), -9px -9px 0px var(--green);
+  }
+}

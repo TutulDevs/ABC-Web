@@ -2,50 +2,56 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Testimonial.css";
 import Article from "./Article/Article";
+import Spinner from "../Spinner/Spinner";
 import axios from "./../axios";
 
 class Testimonial extends Component {
   state = {
     list: [],
+    loading: false,
   };
 
   componentDidMount() {
-    axios.get("/testimonial.json").then((res) => {
-      const fetchedList = [];
+    // show spinner before resolution
+    this.setState({ loading: true });
 
-      for (let key in res.data.lists) {
-        fetchedList.push({
-          ...res.data.lists[key],
-          id: key,
-        });
-      }
-      this.setState({ list: fetchedList });
-      console.log(this.state.list);
-    });
+    axios
+      .get("/testimonial.json")
+      .then((res) => {
+        const fetchedList = [];
+
+        for (let key in res.data.lists) {
+          fetchedList.unshift({
+            ...res.data.lists[key],
+            id: key,
+          });
+        }
+        // remove spinner after resolving
+        this.setState({ list: fetchedList, loading: false });
+      })
+      .catch((err) => this.setState({ loading: true }));
   }
 
   render() {
+    let articles = this.state.list.map((el) => (
+      <Article key={el.id} name={el.name} message={el.message} time={el.time} />
+    ));
+
+    if (this.state.loading) articles = <Spinner />;
+
     return (
       <section className='container section-container Testimonial'>
         {/* Go to the form component */}
         <div className='box-of-btn'>
           <Link to='/form' className='btn'>
-            Write to me
+            Write to us
           </Link>
         </div>
 
         {/* Show comments from Firebase */}
         <div className='articles'>
-          {this.state.list.map((el) => {
-            return (
-              <Article
-                key={el.id}
-                name={el.name}
-                message={el.message}
-                time={el.time}
-              />
-            );
-          })}
+          {/* Articles */}
+          {articles}
         </div>
       </section>
     );

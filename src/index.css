@@ -41,7 +41,6 @@ body {
 
 .section-container {
   min-height: calc(100vh - 10rem);
-  border: 1px solid red;
 }
 
 .section-header {

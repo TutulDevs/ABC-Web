@@ -1,12 +1,14 @@
-import axios from "axios";
 import React, { Component } from "react";
 import "./Form.css";
+import Spinner from "../../Spinner/Spinner";
+import axios from "../../axios";
 
 class Form extends Component {
   state = {
-    name: "",
+    name: "John Doe",
     message: "",
     time: "",
+    Loading: false,
   };
 
   onInputHandler = (e) => {
@@ -21,21 +23,48 @@ class Form extends Component {
   formHandler = (e) => {
     e.preventDefault();
 
-    let obj = { ...this.state };
+    // show spinner
+    this.setState({ Loading: true });
+
+    const obj = { ...this.state };
+    //console.log(obj);
 
     // push the obj in Firebase
     axios
-      .post("testimonial/lists.json", obj)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .post("/testimonial/lists.json", obj)
+      .then((res) => {
+        // make Spinner go away
+        this.setState({ Loading: false });
+        // go to testimonial page
+        this.props.history.push("/testimonial");
+      })
+      .catch((err) => this.setState({ Loading: true }));
 
     // clear everything
-    //e.target.reset();
-
-    console.log(obj);
+    e.target.reset();
   };
 
   render() {
+    let form = (
+      <form className='Form' onSubmit={this.formHandler}>
+        <input
+          type='text'
+          placeholder='Name'
+          id='name'
+          onChange={(e) => this.onInputHandler(e)}
+        />
+        <textarea
+          placeholder='Message'
+          id='message'
+          required
+          onChange={(e) => this.onInputHandler(e)}
+        />
+        <button className='submit'>Send 🚀</button>
+      </form>
+    );
+
+    if (this.state.Loading) form = <Spinner />;
+
     return (
       <section className='container section-container Backdrop'>
         {/* Info  */}
@@ -48,20 +77,8 @@ class Form extends Component {
         </div>
         <div className='Modal'>
           {/* Actual form */}
-          <form className='Form' onSubmit={this.formHandler}>
-            <input
-              type='text'
-              placeholder='Name'
-              id='name'
-              onChange={(e) => this.onInputHandler(e)}
-            />
-            <textarea
-              placeholder='Message'
-              id='message'
-              onChange={(e) => this.onInputHandler(e)}
-            />
-            <button className='submit'>Send 🚀</button>
-          </form>
+
+          {form}
         </div>
       </section>
     );

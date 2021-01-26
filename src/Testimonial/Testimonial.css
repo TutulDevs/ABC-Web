@@ -16,6 +16,7 @@
 
 .Testimonial .articles {
   min-height: 50vh;
+  margin: 3rem 0;
 
   display: grid;
   gap: 2rem;
