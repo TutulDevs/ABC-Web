@@ -31,7 +31,7 @@ class Form extends Component {
 
     // push the obj in Firebase
     axios
-      .post("/testimonial/lists.json", obj)
+      .post("/abc/list.json", obj)
       .then((res) => {
         // make Spinner go away
         this.setState({ Loading: false });

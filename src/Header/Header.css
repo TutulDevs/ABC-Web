@@ -19,7 +19,8 @@
 .Header a {
   color: var(--black);
   font-weight: 500;
-  margin-left: 1rem;
+  margin-left: 0.25rem;
+  padding: 1rem 1.75rem;
 }
 .Header a:hover,
 .Header a.active {

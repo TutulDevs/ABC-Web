@@ -16,13 +16,14 @@ class Testimonial extends Component {
     this.setState({ loading: true });
 
     axios
-      .get("/testimonial.json")
+      .get("/abc.json")
       .then((res) => {
+        console.log(res);
         const fetchedList = [];
 
-        for (let key in res.data.lists) {
+        for (let key in res.data.list) {
           fetchedList.unshift({
-            ...res.data.lists[key],
+            ...res.data.list[key],
             id: key,
           });
         }
